@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Angel 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap');
+
+:root {
+    --bg: #10091f;
+    --panel: #1b1030;
+    --panel2: #26133d;
+    --purple: #b77aff;
+    --pink: #edb6ff;
+    --white: #fff7ff;
+    --muted: #c4b4d8;
+    --border: rgba(199, 143, 255, .22);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 15% 10%, #35164d 0, transparent 35%),
+        radial-gradient(ellipse at 90% 85%, #29103f 0, transparent 35%),
+        var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 4px;
+}
+
+button, .card {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: #d5a1ff;
+    opacity: .4;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .12; transform: scale(.8); }
+    to { opacity: .8; transform: scale(1.2); }
+}
+
+header {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 7%;
+    border-bottom: 1px solid var(--border);
+    background: rgba(16, 9, 31, .88);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: var(--pink);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--purple);
+    margin-right: 7px;
+}
+
+.top-home {
+    color: var(--pink);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 10px 18px;
+    transition: .25s;
+}
+
+.top-home:hover {
+    background: var(--panel2);
+    border-color: var(--purple);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.page {
+    display: none;
+    min-height: calc(100vh - 74px);
+    padding: 65px 7% 80px;
+    animation: enter .45s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+    min-height: calc(100vh - 74px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 20px 75px;
+    position: relative;
+}
+
+.eyebrow {
+    color: var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(76px, 13vw, 145px);
+    font-weight: 600;
+    line-height: 1.05;
+    background: linear-gradient(130deg, #fff5ff, #e0a6ff, #aa69ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 35px #a84aff30);
+}
+
+.hero .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(19px, 3vw, 27px);
+    margin: 24px 0 15px;
+    line-height: 1.6;
+}
+
+.hero .description {
+    max-width: 460px;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.heart-orbit {
+    width: 105px;
+    height: 105px;
+    margin: 0 0 28px;
+    border: 1px solid #bb80ff55;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 60px #a43dff20, inset 0 0 30px #a43dff12;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart-orbit span {
+    font-size: 42px;
+    color: var(--pink);
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+}
+
+.button {
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 14px 23px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform .25s, background .25s, border-color .25s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    color: #210e34;
+    background: linear-gradient(110deg, #f1c3ff, #b77aff);
+    box-shadow: 0 8px 30px #b77aff20;
+}
+
+.secondary {
+    color: var(--pink);
+    border-color: var(--border);
+    background: rgba(255,255,255,.025);
+}
+
+.secondary:hover {
+    background: var(--panel2);
+    border-color: var(--purple);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.scroll-note {
+    margin-top: 55px;
+    color: #8e79a7;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.section-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 45px;
+}
+
+.section-head .eyebrow {
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 47px);
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.section-head p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 16px;
+}
+
+.script {
+    font-family: 'Dancing Script', cursive;
+    color: var(--pink);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    background: linear-gradient(145deg, #261638, #170e27);
+    border: 1px solid var(--border);
+    border-radius: 19px;
+    padding: 25px 22px;
+    color: var(--white);
+    min-height: 205px;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #b56bff0b;
+    right: -30px;
+    top: -30px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #c18aff85;
+    box-shadow: 0 15px 40px #00000024;
+}
+
+.card .symbol {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #b77aff17;
+    border: 1px solid #b77aff35;
+    font-size: 22px;
+    margin-bottom: 21px;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.card p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.card .tap {
+    display: block;
+    color: var(--pink);
+    font-size: 10px;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.content-box {
+    max-width: 750px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, #251537cc, #150d24ee);
+    border-radius: 25px;
+    padding: clamp(25px, 5vw, 50px);
+    box-shadow: 0 25px 80px #00000018;
+}
+
+.content-box p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 17px;
+}
+
+.content-box .signature {
+    font-size: 31px;
+    margin-top: 28px;
+}
+
+.letter {
+    white-space: pre-line;
+}
+
+.choice-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.choice {
+    padding: 18px;
+    text-align: left;
+    color: var(--white);
+    background: #ffffff06;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    line-height: 1.7;
+    transition: .25s;
+}
+
+.choice:hover {
+    background: #a85aff17;
+    border-color: var(--purple);
+}
+
+.choice strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.choice span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.surprise-box {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px 15px;
+}
+
+.gift {
+    font-size: 75px;
+    margin: 15px 0 25px;
+    display: inline-block;
+    filter: drop-shadow(0 0 25px #ba75ff30);
+}
+
+.message-reveal {
+    display: none;
+    background: #c58aff0d;
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: 20px;
+    margin-top: 25px;
+    animation: enter .5s ease;
+}
+
+.message-reveal.show {
+    display: block;
+}
+
+.message-reveal p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.9;
+    color: var(--pink);
+}
+
+.page-footer {
+    text-align: center;
+    color: #89769d;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 25px 15px 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.back-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 35px 0 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #090511d9;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+    animation: enter .25s ease;
+}
+
+.modal-box {
+    max-width: 430px;
+    width: 100%;
+    border: 1px solid #c18aff70;
+    background: linear-gradient(145deg, #301b45, #160c25);
+    padding: 35px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.modal-box .symbol {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.modal-box h3 {
+    font: 500 27px 'Playfair Display', serif;
+}
+
+.modal-box p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+    margin: 18px 0 25px;
+}
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -40px;
+    animation: rise 3s ease-out forwards;
+    color: var(--pink);
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    header {
+        height: 65px;
+        padding: 0 5%;
+    }
+
+    .logo { font-size: 27px; }
+
+    .page {
+        padding: 50px 5% 60px;
+        min-height: calc(100vh - 65px);
+    }
+
+    .hero {
+        min-height: calc(100vh - 65px);
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .card {
+        padding: 19px 15px;
+        min-height: 195px;
+    }
+
+    .card h3 { font-size: 16px; }
+    .card p { font-size: 11px; }
+}
+
+@media (max-width: 420px) {
+    .grid, .choice-list {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 165px;
+    }
+
+    .card .symbol {
+        margin-bottom: 14px;
+    }
+
+    .hero .description {
+        font-size: 13px;
+    }
+
+    .button {
+        padding: 13px 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars" aria-hidden="true"></div>
+<div id="hearts" aria-hidden="true"></div>
+
+<header>
+    <div class="logo" onclick="go('home')">
+        <span>♡</span> Angel
+    </div>
+    <button class="top-home" onclick="go('home')">⌂ Home</button>
+</header>
+
+<main>
+
+<!-- PAGE 1: HOME -->
+<section id="home" class="page active">
+    <div class="hero">
+        <div class="heart-orbit"><span>♡</span></div>
+
+        <div class="eyebrow">A little corner of the internet, just for you</div>
+
+        <h1>Angel.</h1>
+
+        <div class="subtitle">
+            Some people just make life<br>
+            <span class="script">a little more beautiful.</span>
+        </div>
+
+        <p class="description">
+            And then there's you. 💜
+
+            I made this little website because sometimes
+            a simple message doesn't feel like enough
+            to tell someone how special they are.
+        </p>
+
+        <div class="hero-actions">
+            <button class="button primary" onclick="go('reasons')">
+                Enter your little world ♡
+            </button>
+
+            <button class="button secondary" onclick="go('surprise')">
+                There's a surprise for you
+            </button>
+        </div>
+
+        <div class="scroll-note">MADE WITH CARE · MADE FOR ANGEL</div>
+    </div>
+</section>
+
+<!-- PAGE 2: CLICKABLE REASONS -->
+<section id="reasons" class="page">
+    <div class="section-head">
+        <div class="eyebrow">A few things I want you to know</div>
+        <h2>Why you're <span class="script">so special.</span></h2>
+        <p>
+            Don't just read the titles. Tap each card.
+            I have something to tell you. 💜
+        </p>
+    </div>
+
+    <div class="grid">
+        <button class="card" onclick="openNote(0)">
+            <div class="symbol">♡</div>
+            <h3>Your smile</h3>
+            <p>There's something about it that stays with me.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+
+        <button class="card" onclick="openNote(1)">
+            <div class="symbol">✧</div>
+            <h3>Your eyes</h3>
+            <p>One of the little things I find so beautiful about you.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+
+        <button class="card" onclick="openNote(2)">
+            <div class="symbol">☼</div>
+            <h3>Your personality</h3>
+            <p>You're more than just a pretty face.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+
+        <button class="card" onclick="openNote(3)">
+            <div class="symbol">♡</div>
+            <h3>Your laugh</h3>
+            <p>One of those little things that can brighten a day.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+
+        <button class="card" onclick="openNote(4)">
+            <div class="symbol">✿</div>
+            <h3>Your kindness</h3>
+            <p>The beauty people can't capture in a photograph.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+
+        <button class="card" onclick="openNote(5)">
+            <div class="symbol">∞</div>
+            <h3>Simply you</h3>
+            <p>Because being yourself is already something special.</p>
+            <span class="tap">Tap to discover ↗</span>
+        </button>
+    </div>
+
+    <div class="back-row">
+        <button class="button secondary" onclick="go('home')">← Home</button>
+        <button class="button primary" onclick="go('littlethings')">There's more to this ♡</button>
+    </div>
+</section>
+
+<!-- PAGE 3: LITTLE THINGS -->
+<section id="littlethings" class="page">
+    <div class="section-head">
+        <div class="eyebrow">The details matter</div>
+        <h2>It's the little things <span class="script">about you.</span></h2>
+        <p>
+            Beauty isn't just one thing. Sometimes it's a
+            hundred little things that make someone unforgettable.
+        </p>
+    </div>
+
+    <div class="content-box">
+        <h2 style="font-size:27px">Things I genuinely like about you</h2>
+
+        <div class="choice-list">
+            <button class="choice" onclick="openNote(0)">
+                <strong>♡ Your smile</strong>
+                <span>It deserves its own appreciation page.</span>
+            </button>
+
+            <button class="choice" onclick="openNote(1)">
+                <strong>✧ Your beautiful eyes</strong>
+                <span>One of the details I find captivating.</span>
+            </button>
+
+            <button class="choice" onclick="openNote(3)">
+                <strong>☼ Your laugh</strong>
+                <span>That lovely sound I could listen to.</span>
+            </button>
+
+            <button class="choice" onclick="openNote(2)">
+                <strong>♡ Your vibe</strong>
+                <span>There's more to you than appearance.</span>
+            </button>
+
+            <button class="choice" onclick="openNote(4)">
+                <strong>✿ Your heart</strong>
+                <span>The kindness that makes you special.</span>
+            </button>
+
+            <button class="choice" onclick="openNote(5)">
+                <strong>∞ The whole of you</strong>
+                <span>Not perfect. Just wonderfully yourself.</span>
+            </button>
+        </div>
+
+        <p>
+            And honestly, this list could be a lot longer.
+            These are just some of the things I wanted you to know.
+        </p>
+    </div>
+
+    <div class="back-row">
+        <button class="button secondary" onclick="go('reasons')">← Previous page</button>
+        <button class="button primary" onclick="go('letter')">Read your letter ♡</button>
+    </div>
+</section>
+
+<!-- PAGE 4: PERSONAL LETTER -->
+<section id="letter" class="page">
+    <div class="section-head">
+        <div class="eyebrow">Something from me to you</div>
+        <h2>A letter for <span class="script">Angel.</span></h2>
+        <p>No complicated words. Just what I want you to know.</p>
+    </div>
+
+    <div class="content-box">
+        <div class="script" style="font-size:30px">Dear Angel, ♡</div>
+
+        <div class="letter">
+            <p>
+                I wanted to make something different for you.
+                Not just send you another message, but create
+                a little place that reminds you of how beautiful
+                and special you are.
+            </p>
+
+            <p>
+                You're genuinely gorgeous. Your smile, your eyes,
+                your face, your laugh — there's so much about you
+                that I find beautiful. And what makes it even better
+                is that you're a whole person beyond how you look.
+            </p>
+
+            <p>
+                I like you. I like the thought of getting to know
+                you more, making you smile, sharing little moments
+                with you, and giving you reasons to feel appreciated.
+            </p>
+
+            <p>
+                I hope you never feel like you have to be someone
+                else to be worthy of appreciation. You deserve to
+                be valued for who you are, on your best days and
+                your ordinary ones too.
+            </p>
+
+            <p>
+                So whenever you come across this little website,
+                I hope it reminds you of one simple thing:
+                someone thinks you're pretty amazing. 💜
+            </p>
+        </div>
+
+        <div class="signature script">With love & good intentions ♡</div>
+    </div>
+
+    <div class="back-row">
+        <button class="button secondary" onclick="go('littlethings')">← Previous page</button>
+        <button class="button primary" onclick="go('surprise')">One more thing… ✧</button>
+    </div>
+</section>
+
+<!-- PAGE 5: SURPRISE -->
+<section id="surprise" class="page">
+    <div class="section-head">
+        <div class="eyebrow">You made it this far</div>
+        <h2>Okay, Angel… <span class="script">one last thing.</span></h2>
+        <p>
+            I saved a little surprise for you.
+            Take your time with this one. 💜
+        </p>
+    </div>
+
+    <div class="surprise-box">
+        <div class="gift" id="gift">🎁</div>
+
+        <h2 style="font-size:29px">A little reminder, just for you.</h2>
+
+        <p style="color:var(--muted); line-height:1.9; margin:18px auto 27px; max-width:430px">
+            No guessing games, no complicated riddles.
+            Just press the button and read what's waiting for you.
+        </p>
+
+        <button class="button primary" id="revealButton" onclick="revealSurprise()">
+            Open your surprise ♡
+        </button>
+
+        <div class="message-reveal" id="reveal">
+            <div class="script" style="font-size:28px; margin-bottom:15px">
+                Hey, beautiful. 💜
+            </div>
+
+            <p>
+                In case nobody has reminded you today:
+                you're gorgeous, you're worth appreciating,
+                and there's something lovely about being you.
+            </p>
+
+            <p style="font-family:'DM Sans',sans-serif; font-size:13px; margin-top:18px">
+                And yes, Angel… I really do like you. ♡
+            </p>
+
+            <div class="script" style="font-size:25px; margin-top:20px">
+                That's your surprise.
+            </div>
+        </div>
+    </div>
+
+    <div class="back-row">
+        <button class="button secondary" onclick="go('letter')">← Read the letter again</button>
+        <button class="button primary" onclick="go('finale')">Finish the little journey ♡</button>
+    </div>
+</section>
+
+<!-- PAGE 6: THE END -->
+<section id="finale" class="page">
+    <div class="hero" style="min-height:75vh">
+        <div class="heart-orbit"><span>♥</span></div>
+
+        <div class="eyebrow">Before you leave</div>
+
+        <h1 style="font-size:clamp(65px, 11vw, 115px)">Thank you.</h1>
+
+        <div class="subtitle">
+            For being <span class="script">you, Angel.</span>
+        </div>
+
+        <p class="description">
+            This little corner of the internet was made
+            to make you smile. I hope it did.
+
+            <br><br>
+
+            You're gorgeous, you're special, and I'm glad
+            I got to make something just for you. 💜
+        </p>
+
+        <div class="hero-actions">
+            <button class="button primary" onclick="celebrate()">
+                Send some hearts ♡
+            </button>
+
+            <button class="button secondary" onclick="go('home')">
+                Start again ↺
+            </button>
+        </div>
+
+        <div class="script" style="font-size:31px; margin-top:40px">
+            Made with care, for Angel. ♡
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="page-footer">
+    A LITTLE PURPLE CORNER OF THE WORLD · JUST FOR ANGEL ♡
+</footer>
+
+<!-- POP-UP FOR CLICKABLE CARDS -->
+<div class="modal" id="noteModal" onclick="closeOutside(event)">
+    <div class="modal-box">
+        <div class="symbol" id="noteSymbol">♡</div>
+        <h3 id="noteTitle">Your smile</h3>
+        <p id="noteText"></p>
+        <button class="button primary" onclick="closeNote()">Aww, okay ♡</button>
+    </div>
+</div>
+
+<script>
+/* CREATE THE DECORATIVE STARS */
+const stars = document.getElementById('stars');
+
+for (let i = 0; i < 45; i++) {
+    const star = document.createElement('span');
+    star.className = 'star';
+    star.textContent = Math.random() > 0.5 ? '✦' : '·';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.fontSize = (8 + Math.random() * 13) + 'px';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    stars.appendChild(star);
+}
+
+/* PAGE NAVIGATION */
+function go(pageId) {
+    const target = document.getElementById(pageId);
+
+    if (!target) return;
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    target.classList.add('active');
+
+    closeNote();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+/* PERSONAL COMPLIMENT CARDS */
+const notes = [
+    {
+        symbol: '♡',
+        title: 'That beautiful smile',
+        text: "There's something about a genuine smile that makes a person even more beautiful. And yours? It's one of those things I find myself appreciating. I hope you have plenty of reasons to smile, Angel."
+    },
+    {
+        symbol: '✧',
+        title: 'Your gorgeous eyes',
+        text: "Your eyes are one of those details I find really beautiful about you. It's not just about how they look; it's the expressions, the little moments, and the person behind them that make them special."
+    },
+    {
+        symbol: '☼',
+        title: 'The person you are',
+        text: "Looks can catch someone's attention, but personality is what makes them want to know you better. I like the idea of discovering more about you, your thoughts, your humour, and all the little things that make you who you are."
+    },
+    {
+        symbol: '♡',
+        title: 'Your lovely laugh',
+        text: "There's something special about hearing someone laugh for real. I hope life gives you lots of moments that make you laugh until you can't stop. And if I get to be one of the reasons, even better."
+    },
+    {
+        symbol: '✿',
+        title: 'Your heart',
+        text: "The way a person treats others matters. Kindness, consideration, and being genuine are beautiful qualities. I hope you always have people around you who recognise and appreciate the good in you."
+    },
+    {
+        symbol: '∞',
+        title: 'Simply being you',
+        text: "You don't have to perform, impress everyone, or be perfect to deserve appreciation. There's value in the person you already are. And Angel, I want you to know that I genuinely like you."
+    }
+];
+
+function openNote(index) {
+    const note = notes[index];
+
+    if (!note) return;
+
+    document.getElementById('noteSymbol').textContent = note.symbol;
+    document.getElementById('noteTitle').textContent = note.title;
+    document.getElementById('noteText').textContent = note.text;
+
+    document.getElementById('noteModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeNote() {
+    document.getElementById('noteModal').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+function closeOutside(event) {
+    if (event.target.id === 'noteModal') {
+        closeNote();
+    }
+}
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeNote();
+});
+
+/* THE SURPRISE */
+function revealSurprise() {
+    const reveal = document.getElementById('reveal');
+    const button = document.getElementById('revealButton');
+    const gift = document.getElementById('gift');
+
+    reveal.classList.add('show');
+    button.textContent = 'Surprise opened ♡';
+    button.disabled = true;
+    button.style.opacity = '.7';
+
+    gift.textContent = '💜';
+
+    celebrate();
+}
+
+/* FLOATING HEARTS */
+function celebrate() {
+    const container = document.getElementById('hearts');
+    const symbols = ['♡', '♥', '✧', '💜'];
+
+    for (let i = 0; i < 24; i++) {
+        const heart = document.createElement('span');
+
+        heart.className = 'floating-heart';
+        heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.fontSize = (15 + Math.random() * 23) + 'px';
+        heart.style.animationDelay = Math.random() * 1.2 + 's';
+        heart.style.animationDuration = (2.3 + Math.random() * 1.8) + 's';
+
+        container.appendChild(heart);
+
+        heart.addEventListener('animationend', () => heart.remove());
+    }
+}
+</script>
+
+</body>
+</html>
